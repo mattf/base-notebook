@@ -68,7 +68,6 @@ RUN mkdir -p -m 700 /home/$NB_USER/.jupyter/ && \
     echo "c.NotebookApp.ip = '*'" >> /home/$NB_USER/.jupyter/jupyter_notebook_config.py && \
     echo "c.NotebookApp.open_browser = False" >> /home/$NB_USER/.jupyter/jupyter_notebook_config.py && \
     echo "c.NotebookApp.notebook_dir = '/notebooks'" >> /home/$NB_USER/.jupyter/jupyter_notebook_config.py && \
-    echo "c.Session.debug = True" >>  /home/$NB_USER/.jupyter/jupyter_notebook_config.py && \
     chown -R $NB_UID:root /home/$NB_USER
 
 LABEL io.k8s.description="PySpark Jupyter Notebook." \
