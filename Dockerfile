@@ -18,10 +18,10 @@ ENV NB_UID=1011
 ENV NB_PYTHON_VER=2.7
 
 # Python binary and source dependencies
-RUN yum install -y curl wget java-headless bzip2 gnupg2 sqlite3 \
+RUN yum install -y curl java-headless bzip2 gnupg2 sqlite3 \
     && yum clean all -y \
     && cd /tmp \
-    && wget -q https://repo.continuum.io/miniconda/Miniconda3-4.2.12-Linux-x86_64.sh \
+    && curl -s -O https://repo.continuum.io/miniconda/Miniconda3-4.2.12-Linux-x86_64.sh \
     && echo d0c7c71cc5659e54ab51f2005a8d96f3 Miniconda3-4.2.12-Linux-x86_64.sh | md5sum -c - \
     && bash Miniconda3-4.2.12-Linux-x86_64.sh -b -p $CONDA_DIR \
     && rm Miniconda3-4.2.12-Linux-x86_64.sh \
