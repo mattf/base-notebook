@@ -21,8 +21,8 @@ ENV NB_PYTHON_VER=2.7
 RUN yum install -y curl java-headless bzip2 gnupg2 sqlite3 \
     && yum clean all -y \
     && cd /tmp \
-    && curl -s -o Miniconda3.sh https://repo.continuum.io/miniconda/Miniconda3-4.2.12-Linux-x86_64.sh \
-    && echo d0c7c71cc5659e54ab51f2005a8d96f3 Miniconda3.sh | md5sum -c - \
+    && curl -s -o Miniconda3.sh https://repo.continuum.io/miniconda/Miniconda3-4.3.21-Linux-x86_64.sh \
+    && echo c1c15d3baba15bf50293ae963abef853 Miniconda3.sh | md5sum -c - \
     && bash Miniconda3.sh -b -p $CONDA_DIR \
     && rm Miniconda3.sh \
     && export PATH=/opt/conda/bin:$PATH \
